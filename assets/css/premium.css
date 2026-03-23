@@ -15,6 +15,19 @@ body {
 	background-attachment: fixed;
 }
 
+html,
+body {
+	max-width: 100%;
+	overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+	max-width: 100%;
+	height: auto;
+}
+
 .wp-site-blocks {
 	position: relative;
 	isolation: isolate;
@@ -207,5 +220,111 @@ footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide 
 	footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide .wp-block-paragraph {
 		text-align: center !important;
 		margin-top: 4px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	main.wp-block-group.alignwide.has-global-padding,
+	.wp-block-group.has-global-padding,
+	.wp-block-cover__inner-container.has-global-padding,
+	footer .wp-block-group.alignfull.has-global-padding {
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+	}
+
+	.wp-block-columns,
+	[class*="wp-container-core-columns-is-layout-"] {
+		flex-wrap: wrap !important;
+		gap: 14px !important;
+	}
+
+	.wp-block-column,
+	.wp-block-column[style*="flex-basis"] {
+		flex-basis: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.is-nowrap.is-layout-flex,
+	.wp-block-group.is-nowrap.is-layout-flex,
+	.wp-block-buttons.is-layout-flex,
+	[class*="wp-container-core-group-is-layout-"].is-layout-flex {
+		flex-wrap: wrap !important;
+	}
+
+	.text-nowrap,
+	.has-fit-text,
+	.premium-service-card p.full-width.text-nowrap.has-large-font-size {
+		white-space: normal !important;
+	}
+
+	.premium-service-card {
+		padding: 18px !important;
+	}
+
+	.premium-whatsapp-cta {
+		padding: 18px;
+	}
+
+	/* Fallback responsivo para o slideshow quando estilos externos nao carregam. */
+	.wp-block-jetpack-slideshow {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.wp-block-jetpack-slideshow_container {
+		overflow: hidden;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.wp-block-jetpack-slideshow_swiper-wrapper {
+		display: flex !important;
+		width: 100% !important;
+		height: auto !important;
+		transform: none !important;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: thin;
+	}
+
+	.wp-block-jetpack-slideshow_slide {
+		flex: 0 0 100% !important;
+		width: 100% !important;
+		scroll-snap-align: start;
+	}
+
+	.wp-block-jetpack-slideshow_image {
+		width: 100% !important;
+		height: auto !important;
+		object-fit: cover;
+	}
+
+	.wp-block-jetpack-slideshow_button-next,
+	.wp-block-jetpack-slideshow_button-prev {
+		top: 50% !important;
+		transform: translateY(-50%);
+	}
+
+	.premium-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.premium-parallax-layer {
+		transform: none !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.wp-block-buttons .wp-block-button,
+	.wp-block-buttons .wp-block-button__link {
+		width: 100%;
+	}
+
+	.premium-whatsapp-fab {
+		right: 10px;
+		bottom: 10px;
 	}
 }
