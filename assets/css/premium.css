@@ -323,6 +323,29 @@ footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide 
 		width: 100%;
 	}
 
+	/* Reduz alturas fixas de hero/cover no mobile para evitar grandes vazios. */
+	.wp-block-cover[style*="min-height:70vh"],
+	.wp-block-group[style*="min-height:70vh"] {
+		min-height: 46vh !important;
+	}
+
+	.wp-block-cover[style*="min-height:60vh"],
+	.wp-block-group[style*="min-height:60vh"] {
+		min-height: 40vh !important;
+	}
+
+	header .wp-block-site-title {
+		font-size: clamp(1.65rem, 8vw, 2.1rem) !important;
+		line-height: 1.12 !important;
+	}
+
+	header .wp-block-group.has-base-background-color.has-background.has-global-padding {
+		padding-top: 10px !important;
+		padding-right: 14px !important;
+		padding-bottom: 10px !important;
+		padding-left: 14px !important;
+	}
+
 	.premium-whatsapp-fab {
 		right: 10px;
 		bottom: 10px;
