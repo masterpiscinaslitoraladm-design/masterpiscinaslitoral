@@ -1,0 +1,177 @@
+﻿/* Premium visual upgrade: motion, depth and cleaner hierarchy */
+:root {
+	--premium-accent: #00b7a8;
+	--premium-accent-2: #0f7aa4;
+	--premium-bg-deep: #042735;
+	--premium-surface: rgba(255, 255, 255, 0.74);
+	--premium-shadow: 0 22px 65px rgba(0, 28, 43, 0.25);
+}
+
+body {
+	background:
+		radial-gradient(circle at 8% 10%, rgba(0, 183, 168, 0.16) 0%, rgba(0, 183, 168, 0) 40%),
+		radial-gradient(circle at 90% 20%, rgba(15, 122, 164, 0.2) 0%, rgba(15, 122, 164, 0) 45%),
+		linear-gradient(180deg, #f3fcff 0%, #e7f4fa 46%, #d8edf6 100%);
+	background-attachment: fixed;
+}
+
+.wp-site-blocks {
+	position: relative;
+	isolation: isolate;
+}
+
+.wp-site-blocks::before,
+.wp-site-blocks::after {
+	content: "";
+	position: fixed;
+	width: 32vw;
+	height: 32vw;
+	border-radius: 50%;
+	filter: blur(48px);
+	z-index: -1;
+	pointer-events: none;
+}
+
+.wp-site-blocks::before {
+	top: -10vw;
+	left: -8vw;
+	background: rgba(0, 183, 168, 0.22);
+}
+
+.wp-site-blocks::after {
+	right: -8vw;
+	bottom: -10vw;
+	background: rgba(15, 122, 164, 0.2);
+}
+
+.premium-reveal {
+	opacity: 0;
+	transform: translateY(26px) scale(0.985);
+	transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 700ms ease;
+	will-change: transform, opacity;
+}
+
+.premium-reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.premium-service-grid {
+	gap: 22px !important;
+}
+
+.premium-service-card {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	padding: 24px !important;
+	border-radius: 18px !important;
+	background: #ffffff !important;
+	border: 1px solid rgba(9, 97, 133, 0.14) !important;
+	box-shadow: 0 14px 30px rgba(2, 41, 60, 0.12);
+}
+
+.premium-service-card .wp-block-spacer {
+	display: none;
+}
+
+.premium-service-card p.full-width.text-nowrap.has-large-font-size {
+	font-size: clamp(1.05rem, 1rem + 0.32vw, 1.35rem) !important;
+	font-weight: 600;
+	line-height: 1.35;
+	margin-bottom: 10px;
+	color: #0e5b7e;
+}
+
+.premium-service-card p.full-width.wp-block-paragraph {
+	color: #21495b;
+	margin-bottom: 14px;
+}
+
+.premium-service-card pre.wp-block-preformatted {
+	margin-top: auto;
+	margin-bottom: 0;
+	padding-top: 12px;
+	border-top: 1px solid rgba(9, 97, 133, 0.16);
+}
+
+.premium-service-card p.has-x-large-font-size {
+	font-size: 1.7rem !important;
+	margin-bottom: 6px;
+	color: #0ea59d !important;
+}
+
+.wp-block-button__link {
+	transition: transform 240ms ease, box-shadow 240ms ease, background-color 240ms ease;
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(1, 55, 79, 0.2);
+}
+
+.premium-parallax-layer {
+	transform: translate3d(0, var(--premium-parallax-y, 0), 0) scale(1.06);
+	transition: transform 120ms linear;
+	will-change: transform;
+}
+
+.premium-whatsapp-fab {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 10001;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 58px;
+	height: 58px;
+	padding: 0;
+	border-radius: 50%;
+	color: #fff;
+	text-decoration: none;
+	background: linear-gradient(135deg, #00b65b 0%, #0d8f4a 100%);
+	box-shadow: 0 14px 34px rgba(0, 77, 41, 0.35);
+	font-size: 0;
+}
+
+.premium-whatsapp-fab svg {
+	width: 28px;
+	height: 28px;
+	fill: currentColor;
+}
+
+.premium-whatsapp-fab:hover {
+	transform: translateY(-2px);
+}
+
+.premium-whatsapp-cta {
+	margin-top: 18px;
+	padding: 24px;
+	border-radius: 14px;
+	background: linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(226, 245, 252, 0.85) 100%);
+	border: 1px solid rgba(15, 122, 164, 0.18);
+	box-shadow: 0 12px 36px rgba(1, 43, 63, 0.16);
+}
+
+.premium-whatsapp-cta p {
+	margin: 0 0 12px;
+}
+
+/* Exclusion requested: remove all forms from visual flow */
+form,
+.jetpack-contact-form-container,
+.wp-block-jetpack-contact-form,
+.contact-form-submission,
+.contact-form__error {
+	display: none !important;
+}
+
+@media (max-width: 900px) {
+	.premium-whatsapp-fab {
+		right: 12px;
+		width: 54px;
+		height: 54px;
+		bottom: 12px;
+	}
+}

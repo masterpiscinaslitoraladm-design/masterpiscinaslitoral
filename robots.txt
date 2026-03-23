@@ -1,0 +1,12 @@
+# robots.txt para Vercel + Google
+User-agent: *
+Allow: /
+
+# Sitemap principal estatico
+Sitemap: https://masterpiscinaslitoral.com.br/sitemap.xml
+
+# Compatibilidade com setup antigo (Jetpack/Yoast)
+Sitemap: https://masterpiscinaslitoral.com.br/sitemap_index.xml
+Sitemap: https://masterpiscinaslitoral.com.br/sitemap-1.xml
+Sitemap: https://masterpiscinaslitoral.com.br/image-sitemap-1.xml
+Sitemap: https://masterpiscinaslitoral.com.br/video-sitemap-1.xml
