@@ -175,3 +175,37 @@ form,
 		bottom: 12px;
 	}
 }
+
+/* Footer contrast fix on home: avoid dark text over dark background */
+footer .wp-block-columns.alignwide .wp-block-paragraph,
+footer .wp-block-columns.alignwide .has-primary-color {
+	color: #c6e0ea !important;
+}
+
+footer .wp-block-columns.alignwide .wp-block-paragraph a,
+footer .wp-block-columns.alignwide .has-primary-color a {
+	color: #7edbd3 !important;
+}
+
+footer .wp-block-columns.alignwide .wp-block-paragraph a:hover,
+footer .wp-block-columns.alignwide .has-primary-color a:hover {
+	color: #b2f4ef !important;
+}
+
+/* Bottom credit strip: smaller and cleaner text size */
+footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide .wp-block-paragraph {
+	font-size: clamp(0.68rem, 0.65rem + 0.18vw, 0.82rem) !important;
+	line-height: 1.22 !important;
+	margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+	footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide .wp-block-column {
+		flex-basis: 100% !important;
+	}
+
+	footer .wp-block-group.alignwide.has-global-padding .wp-block-columns.alignwide .wp-block-paragraph {
+		text-align: center !important;
+		margin-top: 4px !important;
+	}
+}
